@@ -21,7 +21,7 @@ cut -f1,2 input.final.megahit.contigs.fa.fai > input.final.megahit.contigs.fa.si
 
 bedtools makewindows -g  input.final.megahit.contigs.fa.sizes -w 200 -s 200 > input.final.megahit.contigs.windows200.bed
 
-## Process the .bed file to merge the last window if it's shorter than 200bp
+## Process the .bed file to merge the last window in a contig if it's shorter than 200bp
 awk 'BEGIN {OFS="\t"} {contig=$1; start=$2; end=$3; if (contig != prev_contig) {if (NR > 1) {if (prev_end - prev_start < 200) {print prev_contig, prev_start - 200, prev_end} else {print prev_contig, prev_start, prev_end}} prev_contig=contig; prev_start=start; prev_end=end} else {if (end - start < 200) {prev_end=end} else {if (prev_start != "") {print prev_contig, prev_start, prev_end} prev_start=start; prev_end=end}}} END {print prev_contig, prev_start, prev_end}' input.final.megahit.contigs.windows200.bed > input.final.megahit.contigs.windows200_merged.bed
 
 bedtools getfasta -fi input.final.megahit.contigs.fa -bed iput.final.megahit.contigs.windows200_merged.bed -fo input.final.megahit.contigs.windows200_merged.fasta
