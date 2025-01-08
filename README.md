@@ -64,7 +64,7 @@ awk '{ sum[$9] += $11; count[$9]++ } END { for (id in sum) print id "\t" sum[id]
 
 # Step 5. BH-corrected t-tests for detecting gene CNV differentiation between populations in R platform
 
-##supposed you have n samples, merge input_1.final.megahit.sort.perCDS.depth ... input_n.final.megahit.sort.perCDS.depth into a single tab-delimit table, for example "input_01_n.perCDS.depth.txt" for downstream t-tests with Benjamini-Hochberg (BH) correction between populations by running 'Bulk_t_test_gCNV.R' file###
+##suppose you have n samples, merge input_1.final.megahit.sort.perCDS.depth ... input_n.final.megahit.sort.perCDS.depth into a single tab-delimit table, for example "input_01_n.perCDS.depth.txt" for downstream t-tests with Benjamini-Hochberg (BH) correction between populations by running 'Bulk_t_test_gCNV.R' file###
 
 Rscript Bulk_t_test_gCNV.R
 
