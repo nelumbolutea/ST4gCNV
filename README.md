@@ -32,7 +32,7 @@ awk '/^>/ {header=$0; next} {seq=$0; for(i=0;i<10;i++) {print header "_" i; prin
 
 
 
-# Step 3. Mapping & read coverage depth estimation on genes
+# Step 3. Mapping simulated reads
 
 bowtie2-build Reference_genome.fa Reference_genome
 
