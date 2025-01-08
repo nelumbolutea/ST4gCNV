@@ -48,18 +48,22 @@ samtools index input.final.megahit.sort.bam
 
 # Step 4. Gene CNV estimation based on simulated read coverages
 ## Simulated read depth on gene CDS###
+
 grep "CDS" Reference_genome.gff3 > Reference_genome.cds.gff
 
 sed 's/\S\+Parent=//g' Reference_genome.cds.gff
 
 ##coverage per base###
+
 bedtools coverage -a Reference_genome.cds.gff  -b input.final.megahit.sort.bam -d > input.final.megahit.sort.perbase.depth
 
 ##Aggregate and Calculate Average Coverage on CDS##
+
 awk '{ sum[$9] += $11; count[$9]++ } END { for (id in sum) print id "\t" sum[id] / count[id] }' input.final.megahit.sort.perbase.depth > input.final.megahit.sort.perCDS.depth
 
 
 # Step 5. BH-corrected t-tests for detecting gene CNV differentiation between populations in R platform
+
 ##supposed you have n samples, merge input_1.final.megahit.sort.perCDS.depth ... input_n.final.megahit.sort.perCDS.depth into a single tab-delimit table, for example "input_01_n.perCDS.depth.txt" for downstream t-tests with Benjamini-Hochberg (BH) correction between populations by running 'Bulk_t_test_gCNV.R' file###
 
 Rscript Bulk_t_test_gCNV.R
