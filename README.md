@@ -122,6 +122,7 @@ final_results <- results[, c("Gene", "T_Score", "Mean_Group1", "Mean_Group2", "P
 
 # Write the final results to a file
 write.table(final_results, "input_01_n.perCDS.depth.txt.ttest.txt", sep="\t", row.names=FALSE, quote=FALSE)
+
 ##################bulk t-tests with BH in R platform END###############
 
 
