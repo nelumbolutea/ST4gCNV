@@ -1,6 +1,6 @@
 # ST4gCNV
 
-# The ST4gCNV pipeline to use Next-Generation Sequencing (short reads) data (>=10x) to assess gene copy number varations between (homoploid) populations and closely related species.
+# The ST4gCNV pipeline can use Next-Generation Sequencing (short reads) data (>=10x) to assess gene copy number varations between (homoploid) populations and closely related species.
 
 # Step 1. Megahit for rapid assembly of NGS
 
