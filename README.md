@@ -52,7 +52,7 @@ samtools index input.final.megahit.sort.bam
 
 grep "CDS" Reference_genome.gff3 > Reference_genome.cds.gff
 
-sed 's/\S\+Parent=//g' Reference_genome.cds.gff
+sed -i 's/\S\+Parent=//g' Reference_genome.cds.gff
 
 ##coverage per base###
 
