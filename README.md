@@ -72,6 +72,9 @@ awk '{ sum[$9] += $11; count[$9]++ } END { for (id in sum) print id "\t" sum[id]
 Rscript Bulk_t_test_gCNV.R
 
 
+# PLS cite :
+Shi, T., Gao, Z., Zhang, Y., Rausher, M. D., & Chen, J. (2025). A Strategy of Assessing Gene Copy Number Differentiation Between Populations Using Ultra‐Fast De Novo Assembly of Next‐Generation Sequencing Data. Molecular Ecology Resources, e14080.
+
 
 
 
