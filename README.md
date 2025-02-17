@@ -67,7 +67,7 @@ awk '{ sum[$9] += $11; count[$9]++ } END { for (id in sum) print id "\t" sum[id]
 
 ##suppose you have n samples, merge input_1.final.megahit.sort.perCDS.depth ... input_n.final.megahit.sort.perCDS.depth into a single tab-delimit table, for example "input_01_n.perCDS.depth.txt"
 
-##Perform downstream t-tests with Benjamini-Hochberg (BH) correction between populations by running 'Bulk_t_test_gCNV.R' file###
+##Perform downstream t-tests with Benjamini-Hochberg (BH) correction between populations by running 'Bulk_t_test_gCNV.R' file from https://github.com/nelumbolutea/ST4gCNV/blob/main/Bulk_t_test_gCNV.R###
 
 Rscript Bulk_t_test_gCNV.R
 
