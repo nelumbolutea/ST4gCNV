@@ -47,7 +47,8 @@ samtools index input.final.megahit.sort.bam
 
 
 # Step 4. Gene CNV estimation based on simulated read coverages
-## Simulated read depth on gene CDS###
+## Simulated read depth on gene CDS
+##Note that You can also utilize genomic coordinates (GFF or BED format) for any regions of interest, including pre-miRNAs, conserved non-coding regions, or even sliding windows across chromosomes for scanning CNVs. However, it is advisable to mask low-complexity and highly repetitive regions beforehand###
 
 grep "CDS" Reference_genome.gff3 > Reference_genome.cds.gff
 
